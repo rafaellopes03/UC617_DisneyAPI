@@ -1,0 +1,453 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Nunito:wght@400;600&display=swap');
+
+:root {
+  --azul-escuro: #0a1628;
+  --azul-medio: #0d2b4e;
+  --azul-claro: #1a4a7a;
+  --dourado: #f5c518;
+  --dourado-claro: #ffd700;
+  --branco: #f0f4ff;
+  --cinza: #8899bb;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--azul-escuro);
+  color: var(--branco);
+  font-family: 'Nunito', sans-serif;
+  min-height: 100vh;
+  background-image: radial-gradient(ellipse at top, #1a3a6e 0%, #0a1628 70%);
+}
+
+/* ── APP ── */
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ── BARRA DE PESQUISA ── */
+form {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+form input {
+  width: 100%;
+  max-width: 480px;
+  padding: 0.85rem 1.25rem;
+  border-radius: 50px;
+  border: 2px solid var(--azul-claro);
+  background: var(--azul-medio);
+  color: var(--branco);
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+form input::placeholder {
+  color: var(--cinza);
+}
+
+form input:focus {
+  border-color: var(--dourado);
+}
+
+form button {
+  padding: 0.85rem 1.75rem;
+  border-radius: 50px;
+  border: none;
+  background: var(--dourado);
+  color: var(--azul-escuro);
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+form button:hover {
+  background: var(--dourado-claro);
+  transform: scale(1.03);
+}
+
+/* ── GRID DE PERSONAGENS ── */
+.personagens-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ── CARD ── */
+.personagem-card {
+  background: var(--azul-medio);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--azul-claro);
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+
+.personagem-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--dourado);
+  box-shadow: 0 8px 30px rgba(245, 197, 24, 0.2);
+}
+
+.personagem-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.personagem-card h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.75rem;
+  color: var(--branco);
+}
+
+/* ── PAGINAÇÃO ── */
+.paginacao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.paginacao button {
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  border: 2px solid var(--dourado);
+  background: transparent;
+  color: var(--dourado);
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.paginacao button:hover:not(:disabled) {
+  background: var(--dourado);
+  color: var(--azul-escuro);
+}
+
+.paginacao button:disabled {
+  border-color: var(--cinza);
+  color: var(--cinza);
+  cursor: not-allowed;
+}
+
+.paginacao span {
+  font-family: 'Cinzel', serif;
+  color: var(--dourado);
+  font-size: 0.95rem;
+}
+
+/* ── DETALHE ── */
+.personagem-detalhe {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.personagem-detalhe > button {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 50px;
+  border: 2px solid var(--dourado);
+  background: transparent;
+  color: var(--dourado);
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.personagem-detalhe > button:hover {
+  background: var(--dourado);
+  color: var(--azul-escuro);
+}
+
+.personagem-detalhe img {
+  width: 280px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 3px solid var(--dourado);
+  box-shadow: 0 0 40px rgba(245, 197, 24, 0.25);
+  margin-bottom: 1.5rem;
+}
+
+.personagem-detalhe h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  color: var(--dourado);
+  margin-bottom: 2rem;
+}
+
+.personagem-detalhe h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: var(--dourado);
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.personagem-detalhe ul {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.personagem-detalhe ul li {
+  color: var(--branco);
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--azul-claro);
+  font-size: 0.95rem;
+}
+
+/* ── LOADING ── */
+p {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  color: var(--dourado);
+  font-size: 1.2rem;
+  margin-top: 4rem;
+  letter-spacing: 2px;
+}
+
+/* ── HEADER ── */
+.header {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 2rem;
+  border-bottom: 1px solid var(--azul-claro);
+}
+
+.header h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  color: var(--dourado);
+  letter-spacing: 4px;
+  text-shadow: 0 0 30px rgba(245, 197, 24, 0.4);
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  color: var(--cinza);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-top: 0;
+}
+
+/* ── FOOTER ── */
+.footer {
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 3rem;
+  border-top: 1px solid var(--azul-claro);
+}
+
+.footer p {
+  color: var(--dourado);
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  margin-top: 0;
+}
+
+.footer-sub {
+  color: var(--cinza) !important;
+  font-family: 'Nunito', sans-serif !important;
+  font-size: 0.8rem !important;
+  margin-top: 0.5rem !important;
+  letter-spacing: 0 !important;
+}
+
+.footer a {
+  color: var(--dourado);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* ── HOME PAGE ── */
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem 3rem;
+}
+
+/* Secção do logo */
+.home-top {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0 1.5rem;
+}
+
+.disney-logo {
+  width: 100%;
+  max-width: 380px;
+  /* O SVG é azul-petróleo (#316777), filtro para ficar dourado */
+  filter: brightness(0) saturate(100%) invert(78%) sepia(60%) saturate(600%) hue-rotate(5deg) brightness(105%);
+  opacity: 0.95;
+}
+
+/* Divisória com estrela */
+.home-divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  color: var(--dourado);
+  font-size: 1.1rem;
+}
+
+.home-divider::before,
+.home-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--dourado), transparent);
+}
+
+/* Secção inferior */
+.home-bottom {
+  width: 100%;
+}
+
+.home-titulo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  color: var(--dourado);
+  margin-bottom: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.home-descricao {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.05rem;
+  color: var(--branco);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  text-align: center !important;
+  letter-spacing: 0 !important;
+  margin-top: 0 !important;
+}
+
+.home-descricao a {
+  color: var(--dourado);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.home-descricao a:hover {
+  text-decoration: underline;
+}
+
+.home-api-card {
+  background: var(--azul-medio);
+  border: 1px solid var(--azul-claro);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.home-api-card h5 {
+  font-family: 'Cinzel', serif;
+  color: var(--dourado);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.75rem;
+  text-align: center !important;
+  margin-top: 0 !important;
+}
+
+.home-api-card p {
+  font-family: 'Nunito', sans-serif;
+  color: var(--cinza);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  text-align: center !important;
+  margin-top: 0 !important;
+  letter-spacing: 0 !important;
+}
+
+.home-btn {
+  padding: 0.9rem 2.5rem;
+  border-radius: 50px;
+  border: none;
+  background: var(--dourado);
+  color: var(--azul-escuro);
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(245, 197, 24, 0.3);
+}
+
+.home-btn:hover {
+  background: var(--dourado-claro);
+  transform: scale(1.05);
+  box-shadow: 0 6px 28px rgba(245, 197, 24, 0.45);
+}
+
+/* ── BARRA DE CONTROLOS ── */
+.barra-controles {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.barra-controles form {
+  margin-bottom: 0;
+}
+
+.barra-controles select {
+  padding: 0.85rem 1.25rem;
+  border-radius: 50px;
+  border: 2px solid var(--azul-claro);
+  background: var(--azul-medio);
+  color: var(--branco);
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.barra-controles select:focus,
+.barra-controles select:hover {
+  border-color: var(--dourado);
+}
+
+.barra-controles select option {
+  background: var(--azul-medio);
+}
