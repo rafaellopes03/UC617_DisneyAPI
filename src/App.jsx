@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getCharacters, getCharactersById } from './services/disneyApi.js'
+import { getCharacters, getCharactersById } from './services/disneyAPI.js'
 import BarraPesquisa from './components/BarraPesquisa.jsx'
 import PersonagemCard from './components/PersonagemCard.jsx'
 import Paginacao from './components/Paginacao.jsx'
