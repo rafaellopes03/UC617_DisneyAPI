@@ -74,7 +74,7 @@ src/
 
 ```bash
 # 1. Clonar o repositório
-git clone https://github.com/utilizador/nome-do-repositorio.git
+git clone https://github.com/rafaellopes03/UC617_DisneyAPI.git
 
 # 2. Entrar na pasta do projeto
 cd nome-do-repositorio
