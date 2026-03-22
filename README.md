@@ -6,7 +6,7 @@ Aplicação web desenvolvida com **React + Vite** que permite explorar o univers
 
 ## 🌐 Demo
 
-> Link do site publicado: _em breve_
+> Link do site publicado: https://uc-617-disney-api.vercel.app/
 
 ---
 
